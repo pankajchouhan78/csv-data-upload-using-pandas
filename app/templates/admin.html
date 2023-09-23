@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>{% block title %}File Upload{% endblock %}</title>
+      </head>
+      <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>File</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for file in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ file.file.name }}</td>
+                    <td>
+                        <a href="{% url 'download_file' file.id %}">Download</a>
+                        <a href="{% url 'view_file' file.id %}">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </body>
+      </html>
+
+
+
+
+

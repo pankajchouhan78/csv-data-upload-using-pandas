@@ -1,0 +1,21 @@
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>{% block title %}File Upload{% endblock %}</title>
+      </head>
+      <body>
+          <nav>
+              <a href="{% url 'home' %}">Home</a>
+              {% comment %} <a href="{% url 'admin_page' %}">Admin Panel</a> {% endcomment %}
+          </nav>
+
+          <h1>{{ file_name }}</h1>
+
+          <table>
+              {{ table_data|safe }}
+          </table>
+      </body>
+      </html>
